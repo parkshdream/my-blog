@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{title}} · {{site_title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="stylesheet" href="../css/style.css">
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <a class="site-title" href="../index.html">{{site_title}}</a>
+  <button id="theme-toggle" aria-pressed="false" aria-label="다크모드 전환">🌙</button>
+</header>
+<main>
+  <article>
+    <h1>{{title}}</h1>
+    <p class="post-meta"><time>{{date}}</time></p>
+    <div class="tags">{{tags}}</div>
+    <div class="post-content">
+      {{content}}
+    </div>
+  </article>
+</main>
+<footer class="site-footer">
+  <p><a href="../index.html">← 목록으로</a></p>
+</footer>
+<script src="../js/theme.js"></script>
+</body>
+</html>
